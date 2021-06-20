@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Załadunek {% endblock %}
+
+{% block body %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/javascript/index.js"></script>
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <div class="truck-loading">
+        <h2>Zawartość ciężarówki nr 1 </h2><hr/>
+        <h3>Dodaj paczkę:</h3>
+        <div class="add-pack-section">
+            Waga: <input id="weight" name="weight" type="number" min="10" max="20" step ="0.1"/>
+            <button id="add-pack">Dodaj paczkę</button>
+
+        </div>
+        <hr />
+
+        <div id="pack-list-section" style="height:25vh; overflow-y: scroll">
+            Lista paczek:
+            <div id="pack-list"></div>
+        </div>
+
+        <div>
+            <h2>Zawartość ciężarówki nr 2</h2>
+            <hr/>
+            <div id="agriculural-machinery-section" style="height:25vh; overflow-y: scroll">
+                <select id="agriculuralMachinery">
+                    <option value="0" disabled selected>--wybierz--</option>
+                    <option value="1">Maszyna rolnicza 1,5 t</option>
+                    <option value="2">Maszyna rolnicza 2 t</option>
+                </select>
+                <button id="add-agricultural-machine">Dodaj maszynę rolniczą</button>
+                <div id="agricultural-machinery-list">
+
+                </div>
+            </div>
+
+        </div>
+        <hr/>
+        <button id="send-packs">Wyślij załadunek</button>
+    </div>
+
+
+    <div class="reloading-section" style="display:none">
+        <h1>Przeładunek</h1>
+        <button id="organize-reloading">Organizuj przeładunek</button>
+        <button id="finish">Anuluj</button>
+        <div class="reloading-organize-section" style="display:none">
+            <hr/>
+            <h2>Przeładunek ciężarówki nr 1</h2>
+            <h3 id="totalWeight"></h3>
+            <h3 id="numbersVehicleNeeded"></h3>
+            <h3>Zawartość pojazdów:</h3>
+            <h3 id="vehicleContent" style="height:30vh; overflow-y: scroll"></h3>
+            <h2>Przeładunek ciężarówki (wielkogabarytowej) do samolotu</h2>
+            <h3 id="agricultural-machinery-list"></h3>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
