@@ -11,7 +11,8 @@ Uruchomienie aplikacji;
 Uruchomienie aplikacji w przeglądarce:
 1. http://localhost:8000/truck-loading
 
-Uruchomienie aplikacji z poziomu lini komend
+Uruchomienie aplikacji z poziomu lini komend.
+
 1. Komenda tworząca załadunek ciężarówki z paczkami:
    Poniższa komenda wyświetla instrukcję wywołania pierwszej komendy
     php bin console app:first-truck-loading-help
